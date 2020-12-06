@@ -48,7 +48,7 @@ def get_txtremoved():
         
     timestamp=str(int(time.time()*1000))
     origin_savedName=timestamp+ext
-    mask_savedName=timestamp+"-mask"+ext
+    mask_savedName=timestamp+"-mask"+mask_ext
     ouputName=timestamp+"-text-removed.jpg"
     
     save_path = "./uploaded/"
