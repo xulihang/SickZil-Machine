@@ -5,7 +5,7 @@ import time
 import datetime
 from bottle import route, run, template, request, static_file
 import json
-
+import sys
 import utils.fp as fp
 import imgio as io
 import core
@@ -89,4 +89,9 @@ def rm_txt(imgpath, maskpath, outputpath):
 
     
 if __name__ == '__main__':
-    run(host='127.0.0.1', port=8080)     
+    if len(sys.argv)==2:
+        service_port=sys.argv[1]
+    else:
+        service_port=8080
+    run(host='127.0.0.1', port=service_port)     
+    
