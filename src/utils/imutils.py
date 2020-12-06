@@ -1,5 +1,5 @@
 import os
-from PyQt5.QtGui import QImage
+#from PyQt5.QtGui import QImage
 import cv2
 import numpy as np
 import imghdr
@@ -59,22 +59,24 @@ def imread(fpath):
         if len(nparr):
             return cv2.imdecode(nparr, cv2.IMREAD_UNCHANGED)
 
+'''            
 def nparr2qimg(cvimg):
-    ''' convert cv2 bgr image -> rgb qimg '''
+    #convert cv2 bgr image -> rgb qimg
     h,w,c = cvimg.shape
     byte_per_line = w * c #cvimg.step() #* step # NOTE:when image format problem..
     return QImage(cvimg.data, w,h, byte_per_line, 
                   QImage.Format_RGB888).rgbSwapped()
-
+      
+               
 def np_bgra2qimg(cvimg):
-    ''' convert cv2 bgr image -> rgb qimg '''
+    #convert cv2 bgr image -> rgb qimg
     h,w,c = cvimg.shape
     byte_per_line = w * c #cvimg.step() #* step # NOTE:when image format problem..
     return QImage(cvimg.data, w,h, byte_per_line, 
                   QImage.Format_RGBA8888).rgbSwapped()
 
 def qimg2nparr(qimg): 
-    ''' convert rgb qimg -> cv2 bgr image '''
+    #convert rgb qimg -> cv2 bgr image
     #NOTE: it would be changed or extended to input image shape 
     # Now it just used for canvas stroke.. but in the future... I don't know :(
 
@@ -85,7 +87,7 @@ def qimg2nparr(qimg):
     ptr.setsize(h * w * 4)
     print(h,w,ptr)
     return np.frombuffer(ptr, np.uint8).reshape(h, w, 4)  #  Copies the data
-    #return np.array(ptr).reshape(h, w, 3)  #  Copies the data
+    #return np.array(ptr).reshape(h, w, 3)  #  Copies the data'''
 
 def channel3img(img):
     '''

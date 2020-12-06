@@ -1,6 +1,8 @@
 *.zip
 *.vim
 *.odt
+*.jpg
+*.png
 
 __pycache__/
 *.taghl
