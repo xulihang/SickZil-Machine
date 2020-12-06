@@ -3,15 +3,15 @@ import utils.imutils as iu #TODO: make imutils minimal.
 import utils.fp as fp
 import numpy as np
 import cv2
-from PyQt5.QtGui import QImage
+#from PyQt5.QtGui import QImage
 
 load = fp.multi(lambda p,s=None: s)
 NDARR = 'ndarr'
 IMAGE = 'image'
 MASK  = 'mask' 
 
-@fp.mmethod(load, None)
-def load(path, type=None): return QImage(path)
+#@fp.mmethod(load, None)
+#def load(path, type=None): return QImage(path)
 @fp.mmethod(load, NDARR)
 def load(path, type): return iu.imread(path)
 @fp.mmethod(load, IMAGE)
